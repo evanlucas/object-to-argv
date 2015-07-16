@@ -1,0 +1,23 @@
+{
+  "name": "object-to-argv",
+  "version": "1.0.0",
+  "description": "Convert an object to an array of arguments to pass to a cli process",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "~1.3.1"
+  },
+  "license": "MIT",
+  "author": "Evan Lucas <evanlucas@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanlucas/object-to-argv"
+  },
+  "homepage": "https://github.com/evanlucas/object-to-argv",
+  "bugs": {
+    "url": "https://github.com/evanlucas/object-to-argv/issues"
+  }
+}
