@@ -52,3 +52,53 @@ test('it should work with shorthands', function(t) {
   ])
   t.end()
 })
+
+test('it should work with alwaysSingle', function(t) {
+  var input = {
+    name: 'evan'
+  , d: true
+  , f: false
+  }
+
+  t.deepEqual(convert(input, {
+    alwaysSingle: true
+  }), [
+    '-name'
+  , 'evan'
+  , '-d'
+  ])
+  t.end()
+})
+
+test('it should work with equalSign', function(t) {
+  var input = {
+    name: 'evan'
+  , d: true
+  , f: false
+  }
+
+  t.deepEqual(convert(input, {
+    equalSign: true
+  }), [
+    '--name=evan'
+  , '-d'
+  ])
+  t.end()
+})
+
+test('it should work with alwaysSingle and equalSign', function(t) {
+  var input = {
+    name: 'evan'
+  , d: true
+  , f: false
+  }
+
+  t.deepEqual(convert(input, {
+    equalSign: true
+  , alwaysSingle: true
+  }), [
+    '-name=evan'
+  , '-d'
+  ])
+  t.end()
+})

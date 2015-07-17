@@ -1,6 +1,8 @@
-module.exports = function objectToArgv(obj) {
+module.exports = function objectToArgv(obj, opts) {
   if (typeof obj !== 'object' || !obj)
     obj = {}
+
+  opts = opts || {}
 
   var keys = Object.keys(obj)
     , len = keys.length
@@ -13,19 +15,25 @@ module.exports = function objectToArgv(obj) {
     if (typeof val === 'object' || val == null)
       continue
 
-    if (key.length === 1)
-      out.push('-' + key)
-    else
-      out.push('--' + key)
-
-    if (typeof val !== 'boolean') {
-      out.push(val)
+    if (opts.alwaysSingle || key.length === 1) {
+      key = '-' + key
     } else {
-      // unshift since it is false
-      // TODO(evanlucas) Maybe add option to prepend --no-
-      // to arg
-      if (!val)
+      key = '--' + key
+    }
+
+    if (opts.equalSign) {
+      if (typeof val !== 'boolean') {
+        out.push(key + '=' + val)
+      } else if (val) {
+        out.push(key)
+      }
+    } else {
+      out.push(key)
+      if (typeof val !== 'boolean') {
+        out.push(val)
+      } else if (!val) {
         out.pop()
+      }
     }
   }
 

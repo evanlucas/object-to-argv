@@ -24,9 +24,14 @@ $ npm test -- --cov
 
 ## API
 
-#### objectToArgv(obj:Object)
+#### objectToArgv(obj:Object, [opts:Object])
 
 If `obj` is not an object, it is coerced to one.
+
+`opts` can contain the following keys:
+
+- `equalSign`: will format like `['--name=evan']` vs `['--name', 'evan']`
+- `alwaysSingle`: will always use single dashes like `['-name', 'evan']`
 
 ## Example
 
