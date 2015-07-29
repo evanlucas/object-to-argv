@@ -1,6 +1,7 @@
 # object-to-argv
 
 [![Build Status](https://travis-ci.org/evanlucas/object-to-argv.svg)](https://travis-ci.org/evanlucas/object-to-argv)
+[![Coverage Status](https://coveralls.io/repos/evanlucas/object-to-argv/badge.svg?branch=master&service=github)](https://coveralls.io/github/evanlucas/object-to-argv?branch=master)
 
 Convert an object to an array of arguments to pass to a cli process
 
