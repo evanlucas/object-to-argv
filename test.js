@@ -1,5 +1,7 @@
-var test = require('tap').test
-  , convert = require('./')
+'use strict'
+
+const test = require('tap').test
+    , convert = require('./')
 
 test('it should work with non-object', function(t) {
   t.deepEqual(convert(null), [])
@@ -10,7 +12,7 @@ test('it should work with non-object', function(t) {
 })
 
 test('it should work with booleans', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , debug: true
   }
@@ -24,7 +26,7 @@ test('it should work with booleans', function(t) {
 })
 
 test('it should skip null/undefined/objects', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , debug: null
   , test: undefined
@@ -39,7 +41,7 @@ test('it should skip null/undefined/objects', function(t) {
 })
 
 test('it should work with shorthands', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , d: true
   , f: false
@@ -54,7 +56,7 @@ test('it should work with shorthands', function(t) {
 })
 
 test('it should work with alwaysSingle', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , d: true
   , f: false
@@ -71,7 +73,7 @@ test('it should work with alwaysSingle', function(t) {
 })
 
 test('it should work with equalSign', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , d: true
   , f: false
@@ -87,7 +89,7 @@ test('it should work with equalSign', function(t) {
 })
 
 test('it should work with alwaysSingle and equalSign', function(t) {
-  var input = {
+  const input = {
     name: 'evan'
   , d: true
   , f: false

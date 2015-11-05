@@ -1,16 +1,18 @@
+'use strict'
+
 module.exports = function objectToArgv(obj, opts) {
   if (typeof obj !== 'object' || !obj)
     obj = {}
 
   opts = opts || {}
 
-  var keys = Object.keys(obj)
-    , len = keys.length
-    , out = []
+  const keys = Object.keys(obj)
+  const len = keys.length
+  const out = []
 
   for (var i = 0; i < len; i++) {
     var key = keys[i]
-    var val = obj[key]
+    const val = obj[key]
     // skip null, undefined, or object/array
     if (typeof val === 'object' || val == null)
       continue
