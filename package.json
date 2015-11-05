@@ -4,7 +4,7 @@
   "description": "Convert an object to an array of arguments to pass to a cli process",
   "main": "index.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test.js --cov"
   },
   "dependencies": {},
   "devDependencies": {
